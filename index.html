@@ -3,9 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>示例页面</title>
+    <title>DVD</title>
+    <style>
+        body {
+            background: linear-gradient(120deg, #ffe0f7 0%, #b5d8ff 100%);
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'ZCOOL KuaiLe', 'Comic Sans MS', 'Segoe UI', 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+        .card {
+            background: rgba(255,255,255,0.95);
+            box-shadow: 0 8px 32px rgba(255, 182, 193, 0.18);
+            border-radius: 24px;
+            padding: 40px 32px 32px 32px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 3px dashed #ffb6c1;
+            position: relative;
+        }
+        h1 {
+            color: #ff69b4;
+            margin-bottom: 28px;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 8px #fff0fa, 0 0 8px #b5d8ff;
+            font-family: 'ZCOOL KuaiLe', 'Comic Sans MS', cursive;
+            position: relative;
+        }
+        h1::after {
+            content: '★';
+            color: #ffd700;
+            font-size: 1.5rem;
+            margin-left: 12px;
+            vertical-align: middle;
+            animation: twinkle 1.2s infinite alternate;
+        }
+        @keyframes twinkle {
+            0% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+        video {
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(255,182,193,0.18);
+            outline: 2px solid #b5d8ff;
+            border: 3px solid #ffb6c1;
+            background: #fff0fa;
+        }
+        /* 二次元装饰元素 */
+        .star, .heart {
+            position: absolute;
+            z-index: 1;
+            opacity: 0.7;
+        }
+        .star {
+            color: #ffd700;
+            font-size: 2.2rem;
+        }
+        .heart {
+            color: #ff69b4;
+            font-size: 2rem;
+        }
+        .star1 { top: 30px; left: 20px; }
+        .star2 { top: 80px; right: 40px; }
+        .heart1 { bottom: 40px; left: 60px; }
+        .heart2 { bottom: 80px; right: 80px; }
+    </style>
+    <!-- 可爱字体引入（如ZCOOL KuaiLe） -->
+    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Hello, world!</h1>
+    <div class="star star1">★</div>
+    <div class="star star2">★</div>
+    <div class="heart heart1">❤</div>
+    <div class="heart heart2">❤</div>
+    <div class="card">
+        <h1>视频播放示例</h1>
+        <video width="640" height="360" controls>
+            <source src="dvd.mp4" type="video/mp4">
+            您的浏览器不支持 video 标签。
+        </video>
+    </div>
 </body>
 </html> 
